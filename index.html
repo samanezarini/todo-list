@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <div class="container mx-auto">
+      <div class="container mx-auto md:max-w-3xl lg:max-w-4xl xl:max-w-6xl">
         <div class="flex flex-row justify-between p-4">
           <div class="w-fit">
             <ul class="flex flex-row space-x-6">
@@ -75,7 +75,7 @@
                 </a>
               </li>
               <li class="user mt-2">
-                <a href="#">
+                <a class="cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -102,11 +102,9 @@
 
     <hr class="border-gray-300" />
 
-    <section class="">
+    <section class="mx-auto md:max-w-3xl lg:max-w-4xl xl:max-w-6xl">
       <div class="container mx-auto mt-16 text-center">
-        <h1
-          class="text-6xl font-bold text-shadow-2xs text-shadow-red-800 leading-normal"
-        >
+        <h1 class="text-6xl font-bold text-shadow-2xs leading-normal">
           Organize your thoughts,
           <q>plan your life</q>
           boldly. Let this be a fresh start.
@@ -114,12 +112,13 @@
         <p class="text-3xl pt-8 text-shadow-2xs text-shadow-sky-800">
           With proper
           <span
-            class="underline decoration-wavy decoration-[#f5339b] underline-offset-8 decoration-2"
+            class="underline decoration-wavy decoration-[#f5339b] underline-offset-8"
             >planning</span
           >, take a step closer to your goals every day.
         </p>
         <a
-          class="px-4 py-2 mt-10 w-48 bg-[#0c120c] text-white rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
+          id="openModal"
+          class="px-4 py-2 my-10 w-48 bg-[#0c120c] text-white rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
         >
           Get Started
           <svg
@@ -146,7 +145,7 @@
       </div>
     </section>
 
-    <main class="container mx-auto max-h-screen p-4">
+    <main class="container mx-auto max-h-screen p-4 hidden">
       <div class="mx-auto max-w-lg">
         <div class="mx-auto flex items-center">
           <div class="flex justify-around items-stretch gap-7">
@@ -188,7 +187,7 @@
             <div class="container mx-auto text-gray-900">
               <div class="mb-4">
                 <div>
-                  <p>Today <span class="text-red-400">26 Dec</span></p>
+                  <p>Today <span class="text-[#f5339b]">26 Dec</span></p>
                 </div>
               </div>
 
@@ -230,7 +229,7 @@
         </div>
 
         <div
-          class="mx-auto flex items-center justify-between mt-10 p-10 border border-gray-200 rounded-4xl overflow-hidden"
+          class="mx-auto flex items-center justify-between mt-10 p-5 border border-gray-200 rounded-4xl overflow-hidden"
         >
           <div class="flex items-center">
             <!-- <button type="button" role="checkbox" aria-checked="false" /> -->
@@ -289,26 +288,63 @@
       </div>
     </main>
 
-    <div><p class="text-red-400 text-[10px]">26 Dec</p></div>
+    <!-- Login -->
+    <!-- <div
+      id="loginModal"
+      class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50"
+    >
+      <div class="bg-gray-800 rounded-xl shadow-xl p-8 w-80 relative">
+        <button
+          id="closeModal"
+          class="absolute top-3 right-3 text-gray-400 hover:text-white"
+        >
+          ✕
+        </button>
 
-    <section>
-      <div>
-        <div>
-          <input
-            type="text"
-            name="task"
-            id="task"
-            placeholder="Enter your task"
-          />
-          <input
-            type="text"
-            name="discription"
-            id="discription"
-            multiple
-            placeholder="Enter your task"
-          />
+        <h2 class="text-xl font-bold text-center mb-2">Sign In your Account</h2>
+        <p class="text-gray-400 text-center mb-4 text-sm">
+          Sign in to your account to continue.
+        </p>
+
+        <div class="flex items-center justify-center mb-4">
+          <div class="border-t border-gray-600 w-1/4"></div>
+          <span class="text-gray-400 text-xs mx-2">SIGN IN WITH</span>
+          <div class="border-t border-gray-600 w-1/4"></div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <button
+            class="flex items-center justify-center gap-2 border border-gray-500 py-2 rounded-md hover:bg-gray-700 transition"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              class="w-5 h-5"
+            />
+            <span>GitHub</span>
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 border border-gray-500 py-2 rounded-md hover:bg-gray-700 transition"
+          >
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              class="w-5 h-5"
+            />
+            <span>Google</span>
+          </button>
         </div>
       </div>
-    </section>
+    </div> -->
+
+    <!-- <script>
+      const modal = document.getElementById("loginModal");
+      const openBtn = document.getElementById("openModal");
+      const closeBtn = document.getElementById("closeModal");
+
+      openBtn.addEventListener("click", () => modal.classList.remove("hidden"));
+      closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.add("hidden");
+      });
+    </script> -->
   </body>
 </html>
