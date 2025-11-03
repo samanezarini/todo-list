@@ -18,8 +18,9 @@ addBtn.addEventListener("click", () => {
     "rounded-4xl",
     "px-3",
     "py-2",
-    "mt-3",
-    "w-full",
+    "mt-2",
+    "mb-2",
+    "w-[30rem]",
     "gap-3"
   );
 
