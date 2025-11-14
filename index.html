@@ -208,6 +208,7 @@
             <button
               class="flex flex-row px-2 border border-gray-300 rounded-4xl cursor-pointer"
               id="filter-all"
+              data-filter="all"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -231,13 +232,15 @@
             </button>
             <button
               class="px-2 border border-gray-300 rounded-4xl cursor-pointer"
-              id="complet"
+              id="completed"
+              data-filter="complet"
             >
               Complet
             </button>
             <button
               class="px-2 border border-gray-300 rounded-4xl cursor-pointer"
               id="not-complet"
+              data-filter="not-complet"
             >
               Not-Complet
             </button>
@@ -247,11 +250,11 @@
 
         <!-- start taskbox -->
         <div
-          class="mx-auto max-w-lg flex items-center justify-between border border-gray-200 rounded-4xl overflow-hidden mb-20"
+          class="mx-auto max-w-lg flex items-center justify-between border border-gray-200 rounded-3xl overflow-hidden mb-20"
           id="task-box"
         >
-          <div class="w-full h-10 items-center bg-[#0c120c]">
-            <div class="text-white text-center leading-10">
+          <div class="w-full h-6 items-center bg-[#0c120c]">
+            <div class="text-white text-center leading-6">
               <p>Your list</p>
             </div>
           </div>

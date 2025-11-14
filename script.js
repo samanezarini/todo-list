@@ -1,6 +1,8 @@
 const input = document.getElementById("input-text-task");
 const addBtn = document.getElementById("btn-add");
 const taskList = document.getElementById("task-box");
+const filters = document.querySelectorAll("[data-filter]");
+
 document.body.appendChild(taskList);
 
 addBtn.addEventListener("click", () => {
@@ -21,7 +23,8 @@ addBtn.addEventListener("click", () => {
     "mt-2",
     "mb-2",
     "w-[30rem]",
-    "gap-3"
+    "gap-3",
+    "cursor"
   );
 
   taskList.classList.add("flex", "flex-col", "gap-3");
@@ -75,9 +78,9 @@ addBtn.addEventListener("click", () => {
                     d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"
                   />
                 </svg>`;
-  editBtn.classList.add("ml-1", "text-xl");
+  editBtn.classList.add("ml-3", "text-xl");
 
-    // checkbox
+  // checkbox
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.classList.add("cursor-pointer", "mr-2");
@@ -99,14 +102,16 @@ addBtn.addEventListener("click", () => {
   // input-delete
   input.value = "";
 
-  // events
+  // events checkbox 
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
       taskP.classList.add("line-through", "text-gray-400");
     } else {
       taskP.classList.remove("line-through", "text-gray-400");
     }
+
   });
+
 
   deleteBtn.addEventListener("click", () => {
     taskDiv.remove();
@@ -117,3 +122,19 @@ addBtn.addEventListener("click", () => {
     if (newText) taskP.textContent = newText;
   });
 });
+
+// // filter tasks
+
+// filters.forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     const type = btn.dataset.filter.toLowerCase();
+
+//     [...taskList.children].forEach(task => {
+//       const done = task.dataset.completed === "true";
+
+//       if (type === "all") task.style.display = "flex";
+//       if (type === "completed") task.style.display = done ? "flex" : "none";
+//       if (type === "not-completed") task.style.display = !done ? "flex" : "none";
+//     });
+//   });
+// });
