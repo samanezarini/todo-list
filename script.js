@@ -24,11 +24,17 @@ addBtn.addEventListener("click", () => {
     "mb-2",
     "w-[30rem]",
     "gap-3",
-    "cursor"
+    "cursor",
+    //animation add
+    "opacity-0",
+    "translate-y-3",
+    "transition-all",
+    "duration-300",
+
   );
 
-  taskList.classList.add("flex", "flex-col", "gap-3");
 
+  taskList.classList.add("flex", "flex-col", "gap-3");
 
   // text-task
   const taskP = document.createElement("p");
@@ -98,6 +104,9 @@ addBtn.addEventListener("click", () => {
   taskDiv.appendChild(left);
   taskDiv.appendChild(right);
   taskList.appendChild(taskDiv);
+  requestAnimationFrame(() => {
+    taskDiv.classList.remove("opacity-0", "translate-y-3");
+  });
 
   // input-delete
   input.value = "";

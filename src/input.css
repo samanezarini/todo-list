@@ -5,3 +5,5 @@
   background-size: cover;
   backdrop-filter: blur(10px);
 } */
+
+@custom-variant light (&:where(:not(.dark), :not(.dark *) ) );
