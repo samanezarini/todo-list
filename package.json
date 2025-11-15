@@ -3,7 +3,7 @@
     "@tailwindcss/cli": "^4.1.14"
   },
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+"build": "tailwindcss -i ./src/input.css -o ./public/output.css --content './public/*.html' './src/**/*.js' --minify",
     "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --content \"./*.html\" \"./src/**/*.js\" -w"
   },
   "devDependencies": {
