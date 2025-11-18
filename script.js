@@ -22,7 +22,8 @@ addBtn.addEventListener("click", () => {
     "py-2",
     "mt-2",
     "mb-2",
-    "w-[30rem]",
+    "w-[22rem]",
+    "md:w-[30rem]",
     "gap-3",
     "cursor",
     //animation add
@@ -30,7 +31,6 @@ addBtn.addEventListener("click", () => {
     "translate-y-3",
     "transition-all",
     "duration-300",
-
   );
 
 

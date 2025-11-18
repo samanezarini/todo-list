@@ -151,7 +151,7 @@
       <div class="mx-auto max-w-lg">
         <!-- enter task -->
         <div
-          class="mx-auto mt-5 p-5 border border-gray-200 rounded-4xl overflow-hidden"
+          class="mx-auto mt-5 p-5 border w-full border-gray-200 rounded-4xl overflow-hidden"
         >
           <div class="items-center justify-center">
             <div class="container mx-auto text-gray-900">
@@ -168,7 +168,7 @@
                   <input
                     type="text"
                     id="input-text-task"
-                    class="py-1 sm:py-3 px-2 block w-64 h-9 md:w-80 md:h-9 border-2 border-gray-300 rounded-4xl sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-100 disabled:pointer-events-none"
+                    class="py-1 sm:py-3 px-2 block w-80 h-9 border-2 border-gray-300 rounded-4xl sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-100 disabled:pointer-events-none"
                     placeholder="Enter your task"
                   />
                 </div>
@@ -176,9 +176,9 @@
                   <button
                     type="button"
                     id="btn-add"
-                    class="px-1 py-1 w-32 h-8 bg-[#0c120c] text-white rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
+                    class="px-1 py-1 w-80 md:w-32 h-8 bg-[#0c120c] text-white rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
                   >
-                    <p>Add</p>
+                    <p class="text-gray-800 dark:text-white">Add</p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -250,11 +250,11 @@
 
         <!-- start taskbox -->
         <div
-          class="mx-auto max-w-lg flex items-center justify-between border border-gray-200 rounded-3xl overflow-hidden mb-20"
+          class="mx-auto w-[23rem] md:w-[32rem] flex items-center justify-between border border-gray-200 rounded-3xl overflow-hidden mb-20"
           id="task-box"
         >
           <div class="w-full h-6 items-center bg-[#0c120c]">
-            <div class="text-white text-center leading-6">
+            <div class="text-white text-center text-sm leading-5">
               <p>Your list</p>
             </div>
           </div>
