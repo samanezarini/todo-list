@@ -40,6 +40,8 @@ addBtn.addEventListener("click", () => {
   const taskP = document.createElement("p");
   taskP.textContent = taskText;
   taskP.classList.add("text-gray-800");
+  taskDiv.dataset.completed = "false";
+
 
   // btn-delete
   const deleteBtn = document.createElement("button");
@@ -115,12 +117,14 @@ addBtn.addEventListener("click", () => {
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
       taskP.classList.add("line-through", "text-gray-400");
+      taskDiv.dataset.completed = "true";
+
     } else {
       taskP.classList.remove("line-through", "text-gray-400");
+      taskDiv.dataset.completed = "false";
     }
 
   });
-
 
   deleteBtn.addEventListener("click", () => {
     taskDiv.remove();
@@ -133,17 +137,22 @@ addBtn.addEventListener("click", () => {
 });
 
 // // filter tasks
+function filterTasks(type) {
+  const tasks = taskList.querySelectorAll("div[data-completed]");
 
-// filters.forEach(btn => {
-//   btn.addEventListener("click", () => {
-//     const type = btn.dataset.filter.toLowerCase();
+  tasks.forEach(task => {
+    const isDone = task.dataset.completed === "true";
 
-//     [...taskList.children].forEach(task => {
-//       const done = task.dataset.completed === "true";
+    if (type === "all") task.style.display = "flex";
+    if (type === "complet") task.style.display = isDone ? "flex" : "none";
+    if (type === "not-complet") task.style.display = !isDone ? "flex" : "none";
+  });
+}
 
-//       if (type === "all") task.style.display = "flex";
-//       if (type === "completed") task.style.display = done ? "flex" : "none";
-//       if (type === "not-completed") task.style.display = !done ? "flex" : "none";
-//     });
-//   });
-// });
+filters.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const type = btn.dataset.filter;
+    filterTasks(type);
+  });
+});
+
