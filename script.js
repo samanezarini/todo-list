@@ -133,7 +133,7 @@ addBtn.addEventListener("click", () => {
   // checkbox
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  checkbox.classList.add("cursor-pointer", "mr-2");
+  checkbox.classList.add("cursor-pointer", "mr-2", "with");
 
   // add elements
   const left = document.createElement("div");
