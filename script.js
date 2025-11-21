@@ -2,6 +2,12 @@ const input = document.getElementById("input-text-task");
 const addBtn = document.getElementById("btn-add");
 const taskList = document.getElementById("task-box");
 const filters = document.querySelectorAll("[data-filter]");
+const toggleThemeBtn = document.getElementById("toggle-theme-btn");
+
+// toggle theme
+toggleThemeBtn.addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark");
+});
 
 document.body.appendChild(taskList);
 
@@ -31,6 +37,13 @@ addBtn.addEventListener("click", () => {
     "translate-y-3",
     "transition-all",
     "duration-300",
+    //dark
+    "bg-white",
+    "border-gray-300",
+    "dark:bg-[#0c120c]",
+    "dark:border-gray-500",
+
+
   );
 
 
@@ -39,7 +52,7 @@ addBtn.addEventListener("click", () => {
   // text-task
   const taskP = document.createElement("p");
   taskP.textContent = taskText;
-  taskP.classList.add("text-gray-800");
+  taskP.classList.add("text-gray-800", "dark:text-gray-200");
   taskDiv.dataset.completed = "false";
 
 
@@ -55,7 +68,7 @@ addBtn.addEventListener("click", () => {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="lucide lucide-trash2-icon lucide-trash-2 mt-1"
+                  class="lucide text-gray-800 dark:text-gray-200 mt-1"
                 >
                   <path d="M10 11v6" />
                   <path d="M14 11v6" />
@@ -77,7 +90,7 @@ addBtn.addEventListener("click", () => {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="lucide lucide-square-pen-icon lucide-square-pen mt-1"
+                  class="lucide text-gray-800 dark:text-gray-200 mt-1"
                 >
                   <path
                     d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"

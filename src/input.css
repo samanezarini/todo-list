@@ -6,4 +6,4 @@
   backdrop-filter: blur(10px);
 } */
 
-@custom-variant light (&:where(:not(.dark), :not(.dark *) ) );
+@custom-variant dark (&:where(.dark, .dark *));

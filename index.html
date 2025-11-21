@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="./src/output.css" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   </head>
-  <body>
+  <body class="bg-white dark:bg-black">
     <header>
       <div class="container mx-auto md:max-w-3xl lg:max-w-4xl xl:max-w-6xl">
         <div class="flex flex-row justify-between p-4">
           <div class="w-fit">
             <ul class="flex flex-row space-x-6">
               <li class="notif mt-2">
-                <a href="#">
+                <button class="cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -26,7 +26,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-bell-icon lucide-bell"
+                    class="lucide text-gray-800 dark:text-gray-200"
                   >
                     <path d="M10.268 21a2 2 0 0 0 3.464 0" />
                     <path
@@ -38,7 +38,7 @@
               <li>
                 <button
                   type="button"
-                  class="px-1 py-1 mt-1 w-32 bg-[#0c120c] text-white rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
+                  class="px-1 py-1 mt-1 w-32 bg-[#0c120c] dark:bg-[#fcc600] text-gray-200 dark:text-gray-800 rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
                 >
                   Add Task
                 </button>
@@ -48,8 +48,8 @@
 
           <div>
             <ul class="flex flex-row space-x-6">
-              <li class="dark mt-2">
-                <a href="#">
+              <li class="mt-2">
+                <button class="cursor-pointer" id="toggle-theme-btn">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -60,7 +60,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-sun-icon lucide-sun"
+                    class="lucide text-gray-800 dark:text-gray-200"
                   >
                     <circle cx="12" cy="12" r="4" />
                     <path d="M12 2v2" />
@@ -75,7 +75,7 @@
                 </a>
               </li>
               <li class="user mt-2">
-                <a class="cursor-pointer">
+                <button class="cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -86,7 +86,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="lucide lucide-circle-user-round-icon lucide-circle-user-round"
+                    class="lucide text-gray-800 dark:text-gray-200"
                   >
                     <path d="M18 20a6 6 0 0 0-12 0" />
                     <circle cx="12" cy="10" r="4" />
@@ -100,11 +100,13 @@
       </div>
     </header>
 
-    <hr class="border-gray-300" />
+    <hr class="border-gray-300 dark:border-gray-500" />
 
     <!-- section head -->
     <section class="hidden mx-auto md:max-w-3xl lg:max-w-4xl xl:max-w-6xl">
-      <div class="container mx-auto mt-16 text-center">
+      <div
+        class="container mx-auto mt-16 text-center text-gray-800 dark:text-gray-200"
+      >
         <h1
           class="text-4xl md:text-6xl lg:text-5xl font-bold text-shadow-2xs leading-normal"
         >
@@ -117,7 +119,7 @@
           Take one step closer to your goals every day.
         </p>
 
-        <a
+        <button
           id="openModal"
           class="px-4 py-2 my-10 w-48 bg-[#0c120c] text-white rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
         >
@@ -132,7 +134,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-circle-fading-arrow-up-icon lucide-circle-fading-arrow-up"
+            class="lucide text-gray-800 dark:text-gray-200"
           >
             <path d="M12 2a10 10 0 0 1 7.38 16.75" />
             <path d="m16 12-4-4-4 4" />
@@ -151,13 +153,15 @@
       <div class="mx-auto max-w-lg">
         <!-- enter task -->
         <div
-          class="mx-auto mt-5 p-5 border w-full border-gray-200 rounded-4xl overflow-hidden"
+          class="mx-auto mt-5 p-5 border w-full border-gray-200 dark:border-gray-500 rounded-4xl overflow-hidden"
         >
           <div class="items-center justify-center">
             <div class="container mx-auto text-gray-900">
               <div class="mb-4">
                 <div>
-                  <p>Creating <span class="text-[#ffbc57]">Tasks</span></p>
+                  <p class="text-gray-800 dark:text-gray-200">
+                    Creating <span class="text-[#fcc600]">Tasks</span>
+                  </p>
                 </div>
               </div>
 
@@ -168,7 +172,7 @@
                   <input
                     type="text"
                     id="input-text-task"
-                    class="py-1 sm:py-3 px-2 block w-80 h-9 border-2 border-gray-300 rounded-4xl sm:text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-100 disabled:pointer-events-none"
+                    class="py-1 sm:py-3 px-2 block w-80 h-9 border-2 border-gray-300 dark:border-gray-500 rounded-4xl text-gray-800 dark:text-gray-200 sm:text-sm focus:border-yellow-500 focus:ring-yellow-500 disabled:opacity-100 disabled:pointer-events-none"
                     placeholder="Enter your task"
                   />
                 </div>
@@ -176,7 +180,7 @@
                   <button
                     type="button"
                     id="btn-add"
-                    class="px-1 py-1 w-80 md:w-32 h-8 bg-[#0c120c] text-white rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
+                    class="px-1 py-1 w-80 md:w-32 h-8 text-gray-200 font-bold dark:text-gray-800 bg-[#0c120c] dark:bg-[#fcc600] rounded-4xl cursor-pointer inline-flex items-center justify-center gap-2"
                   >
                     <p>Add</p>
                     <svg
@@ -189,7 +193,7 @@
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="lucide lucide-plus-icon lucide-plus"
+                      class="lucide text-gray-200 dark:text-gray-800"
                     >
                       <path d="M5 12h14" />
                       <path d="M12 5v14" />
@@ -206,7 +210,7 @@
         <div class="mx-auto flex items-center mt-10">
           <div class="flex justify-around gap-7">
             <button
-              class="flex flex-row px-2 border border-gray-300 rounded-4xl cursor-pointer"
+              class="flex flex-row px-2 border border-gray-300 dark:border-gray-500 rounded-4xl cursor-pointer"
               id="filter-all"
               data-filter="all"
             >
@@ -220,7 +224,7 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-funnel-plus-icon lucide-funnel-plus mt-1"
+                class="lucide text-gray-800 dark:text-gray-200 mt-1"
               >
                 <path
                   d="M13.354 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14v6a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341l1.218-1.348"
@@ -228,17 +232,17 @@
                 <path d="M16 6h6" />
                 <path d="M19 3v6" />
               </svg>
-              <p>Filter-All</p>
+              <p class="text-gray-800 dark:text-gray-200">Filter-All</p>
             </button>
             <button
-              class="px-2 border border-gray-300 rounded-4xl cursor-pointer"
+              class="px-2 border border-gray-300 dark:border-gray-500 text-gray-800 dark:text-gray-200 rounded-4xl cursor-pointer"
               id="completed"
               data-filter="complet"
             >
               Complet
             </button>
             <button
-              class="px-2 border border-gray-300 rounded-4xl cursor-pointer"
+              class="px-2 border border-gray-300 dark:border-gray-500 text-gray-800 dark:text-gray-200 rounded-4xl cursor-pointer"
               id="not-complet"
               data-filter="not-complet"
             >
@@ -250,11 +254,13 @@
 
         <!-- start taskbox -->
         <div
-          class="mx-auto w-[23rem] md:w-[32rem] flex items-center justify-between border border-gray-200 rounded-3xl overflow-hidden mb-20"
+          class="mx-auto w-[23rem] md:w-[32rem] flex items-center justify-between border border-gray-300 dark:border-gray-500 rounded-3xl overflow-hidden mb-20"
           id="task-box"
         >
-          <div class="w-full h-6 items-center bg-[#0c120c]">
-            <div class="text-white text-center text-sm leading-5">
+          <div class="w-full h-6 items-center bg-[#0c120c] dark:bg-[#fcc600]">
+            <div
+              class="text-white dark:text-gray-800 text-center text-sm leading-5"
+            >
               <p>Your list</p>
             </div>
           </div>
